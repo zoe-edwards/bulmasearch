@@ -1,0 +1,3 @@
+[submodule "bulma"]
+	path = bulma
+	url = git@github.com:jgthms/bulma.git

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bulma Search</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.33.0/dist/algoliasearchLite.min.js" integrity="sha256-3Laj91VXexjTlFLgL8+vvIq27laXdRmFIcO2miulgEs=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-instantsearch@2.0.1/dist/vue-instantsearch.js" integrity="sha256-hugfQrBAG8mfgKvHCfeNrTlM8/SZ/hKStvbvcpVPpaY=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk=" crossorigin="anonymous" />
+</head>
+<body>
+    <div id="bs" class="container">
+        <div class="section">
+            <div class="columns">
+                <div class="column is-one-third is-offset-one-third">
+                    <h1 class="title">
+                        Bulma Search
+                    </h1>
+                    <ais-instant-search index-name="classes" v-bind:search-client="searchClient">
+                        <nav class="level">
+                            <div class="level-left">
+                                <div class="level-item">
+                                    <ais-search-box
+                                        :autofocus="true"
+                                    ></ais-search-box>
+                                </div>
+                            </div>
+                            <div class="level-right">
+                                <div class="level-item">
+                                    <ais-powered-by></ais-powered-by>
+                                </div>
+                            </div>
+                        </nav>
+                        <ais-hits>
+                            <div slot-scope="{ items }">
+                                <a v-for="item in items" :key="item.objectID" class="box" :href="'https://bulma.io/' + item.url + '/'">
+                                    <p class="subtitle">{{ item.title }}</p>
+                                    <p>{{ item.breadcrumb }}</p>
+                                </a>
+                            </div>
+                        </ais-hits>
+                    </ais-instant-search>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The Bulma website content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+            <p>
+                <strong>Bulma Search</strong> by <a href="https://thomasedwards.co.uk">Thomas Edwards</a>. The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The Bulma Search website content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+            <p>Search is kindly provided by <a href="https://www.algolia.com/">Algolia</a>. The hosting by <a href="https://www.netlify.com">Netlify</a>. Frontend framework is <a href="https://bulma.io/">Bulma</a>.</p>
+            <p><a href="https://github.com/thomasedwards/bulmasearch">github.com/thomasedwards/bulmasearch</a></p>
+        </div>
+    </footer>
+    <script>
+        Vue.use(VueInstantSearch);
+
+        new Vue({
+            el: '#bs',
+            data: {
+                searchClient: algoliasearch(
+                    'HBBYL2QI18',
+                    'b32e9a1c66a55cbcfcb4ef9aaaf972b5',
+                ),
+            },
+        });
+    </script>
+</body>
+</html>
