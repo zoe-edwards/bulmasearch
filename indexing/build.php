@@ -2,9 +2,13 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+$dotenv = Dotenv\Dotenv::create(__DIR__);
+$dotenv->safeLoad();
+$dotenv->required(['ALGOLIA_APP_ID', 'ALGOLIA_API_KEY']);
+
 $algoliaClient = Algolia\AlgoliaSearch\SearchClient::create(
-    env('ALGOLIA_APP_ID'),
-    env('ALGOLIA_API_KEY'),
+    getenv('ALGOLIA_APP_ID'),
+    getenv('ALGOLIA_API_KEY'),
 );
 
 function scanDirectory($dir, &$results = array()) {

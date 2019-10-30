@@ -1,6 +1,7 @@
 {
     "require": {
         "algolia/algoliasearch-client-php": "^2.4",
-        "modularr/yaml-front-matter": "^1.0"
+        "modularr/yaml-front-matter": "^1.0",
+        "vlucas/phpdotenv": "^3.6"
     }
 }
