@@ -1,6 +1,6 @@
 <?php
 
-require './vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $algoliaClient = Algolia\AlgoliaSearch\SearchClient::create(
     env('ALGOLIA_APP_ID'),
