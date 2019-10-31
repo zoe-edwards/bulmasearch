@@ -5,5 +5,10 @@
         "vlucas/phpdotenv": "^3.6",
         "paquettg/php-html-parser": "^2.1",
         "cocur/slugify": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "BulmaSearch\\": "indexing/BulmaSearch"
+        }
     }
 }
