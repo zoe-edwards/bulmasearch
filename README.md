@@ -2,11 +2,11 @@
 
 [Bulma Search](https://bulmasearch.netlify.com) provides search capability for the [Bulma](https://bulma.io) framework documentation.
 
-_The contents of this Bulma Search repository is not developed by the core Bulma team._
-
 ## Usage
 
-To search, simply go to https://bulmasearch.netlify.com, insert your search query and click on a link to be redirected to the relevant content on the official Bulma documentation. 
+To search, simply go to https://bulmasearch.netlify.com, insert your search query and click on a link to be redirected to the relevant content on the official Bulma documentation.
+
+Alternatively the [Search for Bulma](https://github.com/patrickdaze/bulma-search-chrome) Chrome extension uses Bulma Search to add search directly to the Bulma documentation.
 
 ## Development
 
@@ -19,3 +19,7 @@ To search, simply go to https://bulmasearch.netlify.com, insert your search quer
 2. Copy `.env.sample` to `.env` and replace by your development keys
 3. Run `composer install`
 4. Run `php indexer/build.php` to build and upload the index
+
+---
+
+_The contents of this Bulma Search repository is not developed by the core Bulma team._
