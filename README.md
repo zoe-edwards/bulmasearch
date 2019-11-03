@@ -1,6 +1,6 @@
 # [Bulma Search](https://bulmasearch.netlify.com)
 
-[Bulma Search](https://bulmasearch.netlify.com) provides search capability for the [Bulma](https://bulma.io) framework documentation.
+[Bulma Search](https://bulmasearch.netlify.com) provides search capability for the [Bulma](https://bulma.io) documentation.
 
 ## Usage
 
@@ -10,16 +10,18 @@ Alternatively the [Search for Bulma](https://github.com/patrickdaze/bulma-search
 
 ## Development
 
-**Dependencies:**
-- Composer (PHP)
-- PHP 7
 
-**Steps:**
-1. Clone this repo
+### Dependencies
+- [Composer](https://getcomposer.org/)
+- PHP 7.0+
+
+### Getting Started
+
+1. Clone this repository
 2. Copy `.env.sample` to `.env` and replace by your development keys
 3. Run `composer install`
 4. Run `php indexer/build.php` to build and upload the index
 
 ---
 
-_The contents of this Bulma Search repository is not developed by the core Bulma team._
+_The Bulma Search project is not affiliated with nor developed by the core Bulma team._
