@@ -1,2 +1,12 @@
 /vendor/
 /bulma/
+
+.DS_STORE
+*~
+*.sublime-project
+*.sublime-workspace
+.idea
+*.iml
+.vscode
+*.swp
+*.swo
