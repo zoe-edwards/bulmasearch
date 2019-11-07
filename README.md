@@ -20,7 +20,7 @@ Alternatively the [Search for Bulma](https://github.com/patrickdaze/bulma-search
 1. Clone this repository
 2. Copy `.env.sample` to `.env` and replace by your development keys
 3. Run `composer install`
-4. Run `php indexer/build.php` to build and upload the index
+4. Run `php src/build.php` to build and upload the index
 
 ---
 
