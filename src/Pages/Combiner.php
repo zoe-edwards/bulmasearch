@@ -1,4 +1,6 @@
-<?php namespace ThomasEdwards\BulmaSearch\Pages;
+<?php
+
+namespace ThomasEdwards\BulmaSearch\Pages;
 
 class Combiner
 {
@@ -18,14 +20,14 @@ class Combiner
         return $this->contentRaw;
     }
 
-    private function combineElementsBySection(): Combiner
+    private function combineElementsBySection(): self
     {
         $this->contentRaw['sections'] = [];
         foreach ($this->contentRaw['elements'] as $element) {
             if (!isset($this->contentRaw['sections'][$element['section']])) {
                 $this->contentRaw['sections'][$element['section']] = [
                     'section' => $element['section'],
-                    'content' => ''
+                    'content' => '',
                 ];
             }
 
@@ -46,9 +48,9 @@ class Combiner
 
     /**
      * The section content might start with the section name. If it does, remove it.
-     * e.g. Section "Input Colors" with content "Input Colors You can set colors to..." becomes "You can set colors to..."
+     * e.g. Section "Input Colors" with content "Input Colors You can set colors to..." becomes "You can set colors to...".
      */
-    private function removeSectionHeaderPrefix(): Combiner
+    private function removeSectionHeaderPrefix(): self
     {
         foreach ($this->contentRaw['sections'] as $sectionKey => $section) {
             if (!empty($section['section'])) {

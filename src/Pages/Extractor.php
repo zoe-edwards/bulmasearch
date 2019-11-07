@@ -1,4 +1,6 @@
-<?php namespace ThomasEdwards\BulmaSearch\Pages;
+<?php
+
+namespace ThomasEdwards\BulmaSearch\Pages;
 
 use PHPHtmlParser\Dom;
 
@@ -16,7 +18,7 @@ class Extractor
     }
 
     /**
-     * Extracts the most useful content of a page. This is usually the headers and some of content (p, td, li...)
+     * Extracts the most useful content of a page. This is usually the headers and some of content (p, td, li...).
      */
     public function extract()
     {
@@ -33,11 +35,12 @@ class Extractor
             ->sortElements();
 
         $this->contentRaw['elements'] = $this->elements;
+
         return $this->contentRaw;
     }
 
     /**
-     * Load page content and extract headers and content
+     * Load page content and extract headers and content.
      */
     private function elements()
     {
@@ -50,7 +53,7 @@ class Extractor
     }
 
     /**
-     * Get headers from the page (h1 and h2 only)
+     * Get headers from the page (h1 and h2 only).
      */
     private function headers()
     {
@@ -64,7 +67,7 @@ class Extractor
         return array_reverse($headers, true);
     }
 
-    private function extractContent(): Extractor
+    private function extractContent(): self
     {
         $newElements = [];
         foreach ($this->elements as $element) {
@@ -79,18 +82,19 @@ class Extractor
 
             $newElements[] = [
                 'id' => $element->id(),
-                'content' => $pageContent
+                'content' => $pageContent,
             ];
         }
 
         $this->elements = $newElements;
+
         return $this;
     }
 
     /**
-     * Place the content under a specific header (or '' for root)
+     * Place the content under a specific header (or '' for root).
      */
-    private function assignHeaders(): Extractor
+    private function assignHeaders(): self
     {
         foreach ($this->elements as $elementIndex => $element) {
             $this->elements[$elementIndex]['section'] = Page::PAGE_ROOT;
@@ -108,7 +112,7 @@ class Extractor
     /**
      * When PHPHtmlParser extracts dom, the order isn't preserved. This reorders the elements in their original position.
      */
-    private function sortElements(): Extractor
+    private function sortElements(): self
     {
         usort($this->elements, function ($a, $b) {
             if ($a['id'] === $b['id']) {

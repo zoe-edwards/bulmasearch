@@ -1,10 +1,12 @@
-<?php namespace ThomasEdwards\BulmaSearch\Objects;
+<?php
+
+namespace ThomasEdwards\BulmaSearch\Objects;
 
 use Cocur\Slugify\Slugify;
 use ThomasEdwards\BulmaSearch\Pages\Page;
 
 /**
- * Class Converter
+ * Class Converter.
  *
  * Converts page sections into objects
  */
@@ -46,15 +48,16 @@ class Converter
                 'pageBreadcrumbLevel' => $breadcrumbLevel,
                 'sectionTitle' => $sectionName,
                 'sectionIsRoot' => (int) $sectionIsRoot, // int so that it can be used with ranking ordering
-                'sectionContent' => $section['content']
+                'sectionContent' => $section['content'],
             ];
         }
     }
 
     /**
-     * Checks if section is a page root, and converts it
+     * Checks if section is a page root, and converts it.
      *
      * @param $section
+     *
      * @return array two dimensional [$section, $sectionIsRoot]
      */
     private function section($section)
@@ -67,11 +70,12 @@ class Converter
     }
 
     /**
-     * Adds anchor/# to url to be able to jump to section
+     * Adds anchor/# to url to be able to jump to section.
      *
      * @param string $pageUrl
      * @param string $sectionName
-     * @param bool $sectionIsRoot
+     * @param bool   $sectionIsRoot
+     *
      * @return string
      */
     private function calculateSectionUrl(string $pageUrl, string $sectionName, bool $sectionIsRoot)
@@ -84,11 +88,12 @@ class Converter
     }
 
     /**
-     * Full title allows search to perform proximity matching by combining breadcrumbs, page title and section title
+     * Full title allows search to perform proximity matching by combining breadcrumbs, page title and section title.
      *
-     * @param array $page
-     * @param int $breadcrumbLevel
+     * @param array  $page
+     * @param int    $breadcrumbLevel
      * @param string $sectionName
+     *
      * @return string
      */
     private function calculateFullTitle(array $page, int $breadcrumbLevel, string $sectionName): string

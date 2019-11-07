@@ -7,6 +7,6 @@ use ThomasEdwards\BulmaSearch\Indexers\Indexer;
 $index = new Indexer();
 $index
     ->build()
-	// ->debug();
+    // ->debug();
     ->configure()
     ->upload();

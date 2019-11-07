@@ -1,9 +1,10 @@
-<?php namespace ThomasEdwards\BulmaSearch\Pages;
+<?php
+
+namespace ThomasEdwards\BulmaSearch\Pages;
 
 /**
- * Class Pages
+ * Class Pages.
  *
- * @package BulmaSearch\Pages
  * @property array $files
  */
 class Pages

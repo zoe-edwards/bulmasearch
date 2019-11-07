@@ -1,4 +1,6 @@
-<?php namespace ThomasEdwards\BulmaSearch\Pages;
+<?php
+
+namespace ThomasEdwards\BulmaSearch\Pages;
 
 class Content
 {
@@ -7,6 +9,7 @@ class Content
     public function __construct(array $content)
     {
         $this->content = $content;
+
         return $this;
     }
 
@@ -30,7 +33,7 @@ class Content
      *
      * e.g. {% include elements/anchor.html name="Offset" %} becomes <h2>Offset</h2>
      */
-    private function convertAnchorsToHeaders(): Content
+    private function convertAnchorsToHeaders(): self
     {
         $includeTag = 'include elements/anchor.html';
         $attributeStartString = 'name="';
@@ -64,14 +67,14 @@ class Content
     }
 
     /**
-     * Remove liquid block tags
+     * Remove liquid block tags.
      *
      * https://shopify.github.io/liquid/tags/comment/
      * e.g. {% comment %} this is a comment {% endcomment %}
      *
      * Warning: Might cause issues with nested tags with the same tag name
      */
-    private function removeLiquidBlockTags(): Content
+    private function removeLiquidBlockTags(): self
     {
         $blockEndString = '{% end';
         $blockEndEndString = '%}';
@@ -105,13 +108,14 @@ class Content
     }
 
     /**
-     * Remove all tags that start with $tagStart and ends with $tagEnd
+     * Remove all tags that start with $tagStart and ends with $tagEnd.
      *
      * @param string $tagStart
      * @param string $tagEnd
+     *
      * @return Content
      */
-    private function removeTags(string $tagStart, string $tagEnd): Content
+    private function removeTags(string $tagStart, string $tagEnd): self
     {
         while (true) {
             $start = strpos($this->content['content'], $tagStart);

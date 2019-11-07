@@ -1,4 +1,6 @@
-<?php namespace ThomasEdwards\BulmaSearch\Objects;
+<?php
+
+namespace ThomasEdwards\BulmaSearch\Objects;
 
 class Objects
 {

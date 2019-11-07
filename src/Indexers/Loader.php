@@ -1,4 +1,6 @@
-<?php namespace ThomasEdwards\BulmaSearch\Indexers;
+<?php
+
+namespace ThomasEdwards\BulmaSearch\Indexers;
 
 use ThomasEdwards\BulmaSearch\Objects\Objects;
 use ThomasEdwards\BulmaSearch\Pages\Pages;
@@ -16,6 +18,7 @@ class Loader
     {
         $files = $this->scan($this->path);
         $pages = (new Pages($files))->load();
+
         return (new Objects($pages))->build();
     }
 

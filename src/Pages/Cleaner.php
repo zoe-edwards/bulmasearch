@@ -1,4 +1,6 @@
-<?php namespace ThomasEdwards\BulmaSearch\Pages;
+<?php
+
+namespace ThomasEdwards\BulmaSearch\Pages;
 
 class Cleaner
 {
@@ -23,6 +25,7 @@ class Cleaner
     {
         list($filePath, $url) = explode('bulma/docs/', $this->contentRaw['file']);
         $this->contentRaw['url'] = str_replace('.html', '', $url);
+
         return $this;
     }
 
@@ -53,6 +56,7 @@ class Cleaner
     private function cleanContent()
     {
         $this->contentRaw = (new Content($this->contentRaw))->clean();
+
         return $this;
     }
 }

@@ -1,11 +1,12 @@
-<?php namespace ThomasEdwards\BulmaSearch\Pages;
+<?php
+
+namespace ThomasEdwards\BulmaSearch\Pages;
 
 use FrontMatter;
 
 /**
- * Class Page
+ * Class Page.
  *
- * @package BulmaSearch\Pages
  * @property string $file
  * @property array $contentRaw
  * @property array $sections
@@ -40,36 +41,41 @@ class Page
         return $this->sections;
     }
 
-    private function open(): Page
+    private function open(): self
     {
         $this->page = new FrontMatter($this->file);
+
         return $this;
     }
 
-    private function load(): Page
+    private function load(): self
     {
         $this->contentRaw['file'] = $this->file;
         $this->contentRaw['title'] = $this->page->fetch('title');
         $this->contentRaw['breadcrumb'] = $this->page->fetch('breadcrumb');
         $this->contentRaw['content'] = $this->page->fetch('content');
+
         return $this;
     }
 
-    private function clean(): Page
+    private function clean(): self
     {
         $this->contentRaw = (new Cleaner($this->contentRaw))->clean();
+
         return $this;
     }
 
-    private function extract(): Page
+    private function extract(): self
     {
         $this->contentRaw = (new Extractor($this->contentRaw))->extract();
+
         return $this;
     }
 
-    private function combine(): Page
+    private function combine(): self
     {
         $this->sections = (new Combiner($this->contentRaw))->combine();
+
         return $this;
     }
 
