@@ -1,0 +1,15 @@
+preset: recommended
+
+risky: true
+
+enabled:
+  - unalign_double_arrow
+  - concat_with_spaces
+
+disabled:
+  - align_double_arrow
+  - concat_without_spaces
+
+finder:
+  path:
+    - "src"
