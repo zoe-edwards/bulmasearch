@@ -22,7 +22,7 @@
                             <div class="level-left">
                                 <div class="level-item">
                                     <ais-search-box
-                                        :autofocus="true"
+                                            :autofocus="true"
                                     ></ais-search-box>
                                 </div>
                             </div>
@@ -34,9 +34,16 @@
                         </nav>
                         <ais-hits>
                             <div slot-scope="{ items }">
-                                <a v-for="item in items" :key="item.objectID" class="box" :href="'https://bulma.io/' + item.url + '/'">
-                                    <p class="subtitle">{{ item.title }}</p>
-                                    <p>{{ item.breadcrumb }}</p>
+                                <a v-for="item in items" :key="item.objectID" class="box" :href="'https://bulma.io/' + item.url">
+                                    <h2 class="title is-5 is-marginless">
+                                        {{ item.pageTitle }}
+                                        <span v-if="item.sectionTitle" class="has-text-grey">#{{ item.sectionTitle }}</span>
+                                    </h2>
+                                    <p v-if="item.pageBreadcrumbLevel > 1" class="has-text-grey-light"><small>{{ item.pageBreadcrumb }}</small></p>
+                                    <ais-snippet attribute="sectionContent" :hit="item" :class-names="{
+                                        'ais-Snippet': 'has-text-grey-dark',
+                                        'ais-Snippet-highlighted': 'has-text-info',
+                                      }" />
                                 </a>
                             </div>
                         </ais-hits>

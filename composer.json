@@ -1,6 +1,14 @@
 {
     "require": {
         "algolia/algoliasearch-client-php": "^2.4",
-        "modularr/yaml-front-matter": "^1.0"
+        "modularr/yaml-front-matter": "^1.0",
+        "vlucas/phpdotenv": "^3.6",
+        "paquettg/php-html-parser": "^2.1",
+        "cocur/slugify": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "ThomasEdwards\\BulmaSearch\\": "src"
+        }
     }
 }
