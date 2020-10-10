@@ -22,6 +22,10 @@ Alternatively the [Search for Bulma](https://github.com/patrickdaze/bulma-search
 3. Run `composer install`
 4. Run `php src/build.php` to build and upload the index
 
+### Updating Search Index
+
+The GitHub [Search Index Update](.github/workflows/indexer.yml) Action automatically builds and updates the Algolia index when new commits are merged into the `update-index` branch.
+
 ---
 
 _The Bulma Search project is not affiliated with nor developed by the core Bulma team._
