@@ -1,15 +1,20 @@
-# [Bulma Search](https://bulmasearch.netlify.com)
+# Bulma Search
 
 [Bulma Search](https://bulmasearch.netlify.com) provides search capability for the [Bulma](https://bulma.io) documentation.
 
 ## Usage
 
-To search, simply go to https://bulmasearch.netlify.com, insert your search query and click on a link to be redirected to the relevant content on the official Bulma documentation.
+To search, go to https://bulmasearch.netlify.com, insert your search query and click on a link to be redirected to the relevant content on the official Bulma documentation.
 
-Alternatively the [Search for Bulma](https://github.com/patrickdaze/bulma-search-chrome) Chrome extension uses Bulma Search to add search directly to the Bulma documentation.
+### Chrome Extension
+
+[<img src="public/img/chrome-install.png">](https://chrome.google.com/webstore/detail/search-for-bulma/melacinmggphfalalkhedbcjgdpnohfl)
+
+You can also install the [Search for Bulma Chrome Extension](https://github.com/patrickdaze/bulma-search-chrome) which uses Bulma Search to add search directly to the Bulma website.
 
 ## Development
 
+Want to make tweaks to the Bulma Search code?
 
 ### Dependencies
 - [Composer](https://getcomposer.org/)
