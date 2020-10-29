@@ -44,7 +44,7 @@ class Extractor
      */
     private function elements()
     {
-        $this->dom->load($this->contentRaw['content']);
+        $this->dom->loadStr($this->contentRaw['content']);
 
         // clean up memory for vars no longer used
         unset($this->contentRaw['content']);

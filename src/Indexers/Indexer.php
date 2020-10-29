@@ -29,8 +29,8 @@ class Indexer
     public function configure(): self
     {
         $this->algoliaClient = SearchClient::create(
-            getenv('ALGOLIA_APP_ID'),
-            getenv('ALGOLIA_API_KEY')
+            $_ENV['ALGOLIA_APP_ID'],
+            $_ENV['ALGOLIA_API_KEY']
         );
 
         $this->index = $this->algoliaClient->initIndex('classes_holding');
