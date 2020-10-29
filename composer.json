@@ -1,10 +1,13 @@
 {
+    "name": "thomasedwards/bulmasearch",
+    "description": "Bulma Search provides search capability for the Bulma documentation.",
+    "license": "MIT",
     "require": {
         "algolia/algoliasearch-client-php": "^2.4",
         "modularr/yaml-front-matter": "^1.0",
-        "vlucas/phpdotenv": "^3.6",
-        "paquettg/php-html-parser": "^2.1",
-        "cocur/slugify": "^3.2"
+        "vlucas/phpdotenv": "^5.2",
+        "paquettg/php-html-parser": "^3.1",
+        "cocur/slugify": "^4.0"
     },
     "autoload": {
         "psr-4": {

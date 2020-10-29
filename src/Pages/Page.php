@@ -7,9 +7,9 @@ use FrontMatter;
 /**
  * Class Page.
  *
- * @property string $file
- * @property array $contentRaw
- * @property array $sections
+ * @property string      $file
+ * @property array       $contentRaw
+ * @property array       $sections
  * @property FrontMatter $page
  */
 class Page
