@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          php-version: '7.4'
           submodules: true
 
       - name: Validate composer.json and composer.lock
@@ -30,8 +31,6 @@ jobs:
       - name: Install dependencies
         if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install --prefer-dist --no-progress --no-suggest
-        with:
-          php-version: '7.4'
 
       - name: Build and upload index
         env:
