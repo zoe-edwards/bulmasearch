@@ -17,9 +17,6 @@ jobs:
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
-        env:
-          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
-          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
         with:
           php-version: '7.4'
 
@@ -40,4 +37,7 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: Build and upload index
+        env:
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
         run: php src/build.php
