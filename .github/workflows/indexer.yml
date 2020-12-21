@@ -30,6 +30,7 @@ jobs:
       - name: Install dependencies
         if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install --prefer-dist --no-progress --no-suggest
+        php-version: '7.4'
 
       - name: Build and upload index
         env:
